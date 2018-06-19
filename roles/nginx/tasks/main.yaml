@@ -1,0 +1,11 @@
+- name: install nginx 
+  apt: pkg=nginx state=installed update_cache=true
+
+- name: copy conf file
+  copy:
+    src: ../templates/nginx.conf.j2
+    dest: /Documents/DevOps/Day1/
+
+- name: start nginx on boot
+  service: name=nginx state=started enabled=yes
+  tags: nginx_boot

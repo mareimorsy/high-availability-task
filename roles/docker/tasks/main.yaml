@@ -1,0 +1,44 @@
+# ---
+# - name: Add docker apt repo
+#   become: yes
+#   apt_repository:
+#     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_lsb.codename}} stable"
+#     update_cache: yes
+
+# - name: Install Docker apt package
+#   become: yes
+#   apt: name=docker-ce state=present update_cache=yes force=yes
+
+# - name: Ensure Docker service is installed and restarted
+#   become: yes
+#   service:
+#     name: docker
+#     state: restarted
+#     enabled: yes
+# - name: Install Docker Compose (if configured).
+#   become: yes
+#   get_url:
+#     url: https://github.com/docker/compose/releases/download/1.13.0/docker-compose-Linux-x86_64
+#     dest: /usr/local/bin/docker-compose
+#     mode: 0755
+
+# - name: Copy file to a remote server
+#   copy:
+#    src: ./test.txt
+#    dest: /tmp
+
+# - name: install base packages
+#   apt: pkg=git state=present update_cache=yes cache_valid_time=604800
+
+# - name: dsfds
+#   git:
+#     repo=https://github.com/ealeksandrov/NodeAPI.git
+#     dest=app
+
+# - name: Copy file to a remote server
+#   copy:
+#    src: ./Dockerfile
+#    dest: /home/vagrant/app
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  shell: docker-compose -f /home/vagrant/app/docker-compose.yml up -d --build
