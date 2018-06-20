@@ -36,6 +36,11 @@ http://192.168.33.20:90
 
 * Instead of making a python script inside of each container ... I can make a master script that can execute docker inspect each hour and collect the whole data and send them at once
 
+* If you have got an error with ansible such as a time out with haproxy ... just comment out the last play inside `roles/docker/tasks/main.yml` like that
+```
+  # shell: docker run -d -p 90:90 mareimorsy/haproxy
+```
+
 * I know that I have to expose only the port 80
 
 * And I should have run all containers in docker-compose in order to check its status and run it only if it's not running
