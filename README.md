@@ -38,7 +38,7 @@ http://192.168.33.20:90
 
 * If you have got an error with ansible such as a time out with haproxy ... just comment out the last play inside `roles/docker/tasks/main.yml` like that
 ```
-  # shell: docker run -d -p 90:90 mareimorsy/haproxy
+  # shell: docker run -d -p 90:80 mareimorsy/haproxy
 ```
 
 * I know that I have to expose only the port 80
