@@ -4,7 +4,7 @@
 * Download the project
 ```
 $ git clone https://github.com/mareimorsy/high-availability-task.git
-$ cd high-availability-task-master/
+$ cd high-availability-task/
 ```
 ```
 $ vagrant up
